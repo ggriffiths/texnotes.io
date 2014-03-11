@@ -1,7 +1,7 @@
 function notesCtrl($scope){
 	$scope.formated = function(value){
 		return "$" + value + "$";
-	}
+	};
 }
 function toolbarCtrl($scope) {
 	$scope.master = {};

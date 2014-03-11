@@ -1,12 +1,14 @@
 var myApp = angular.module("myApp", []);
 
+
 MathJax.Hub.Config({
     skipStartupTypeset: true,
     messageStyle: "none",
     "HTML-CSS": {
         showMathMenu: false
     },
-    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    processEscapes: true
 });
 MathJax.Hub.Configured();
 
@@ -16,7 +18,7 @@ var generateSvg = function(){
   var ctx = canvas.getContext("2d");
   var data = "<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='200'>" +
                "<foreignObject width='100%' height='100%'>" +
-                 "<div xmlns='http://www.w3.org/1999/xhtml' style='font-size:40px'>" +
+                 "<div xmlns='http://www.w3.org/1999/xhtml' style='font-size:12px'>" +
                    divData +
                  "</div>" +
                "</foreignObject>" +
@@ -34,7 +36,7 @@ var generateSvg = function(){
   aId.href=url;
 };
 
- (function(){
+ /*(function(){
    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
    po.src = 'https://apis.google.com/js/client:plusone.js';
    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
@@ -52,4 +54,7 @@ var generateSvg = function(){
     //   "immediate_failed" - Could not automatically log in the user
     console.log('Sign-in state: ' + authResult['error']);
   }
-}
+}*/
+
+
+generateSvg();

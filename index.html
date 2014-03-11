@@ -8,7 +8,7 @@
 		<link rel="stylesheet" type="text/css" href="style/app.css">
 
 		<!-- Library JS Files -->
-		<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    	<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 		<script type="text/javascript" src='lib/angular.js'></script>
 		<script type="text/javascript" src='lib/jquery.js'></script>
 	</head>
@@ -16,11 +16,13 @@
 	<body>
 		<center><img src="img/logo.png"></center>
 		<div ng-app="myApp">
+
 			<div id="content">
 				<div id="editor" ng-controller="notesCtrl">
 					<h2>Preview:</h2>
 					<div id="previewBox" tex-bind="notes"></div>
-					<br>
+
+					<br><br>	
 					<h2>Edit:</h2>
 					<textarea ng-model="notes" id="editBox"/></textarea>	
 				</div>
@@ -40,16 +42,18 @@
 						</span>
 						
 						<form novalidate class="simple-form">
-							Google Drive Integration:<br>
-							<input type="checkbox" ng-model="user.driveEnabled" value="true" />Enabled<br><br>
+							<!--Google Drive Integration:<br>
+							<input type="checkbox" ng-model="user.driveEnabled" value="true" />Enabled<br><br>-->
+	
+
 
 							Parser Type:<br>
 							<input type="radio" ng-model="user.parserType" value="tex" />TeX<br>
-							<input type="radio" ng-model="user.parserType" value="english" />English
+							<input type="radio" ng-model="user.parserType" value="english" />English (not implemented yet)
 							</form>
 							<pre>user_settings = {{user | json}}</pre>
 							<center>
-							<input type="button" value="Generate SVG" onclick="generateSvg();"><br>
+							<input type="button" value="Generate .svg File" onclick="generateSvg();"><br>
 							<a href="localhost" id="dlLink" download>
 							<canvas id="canvas" style="border:2px solid black;" width="200" height="200"></canvas><br>
 							<p style="line-height:0%;size:10px">(Click to download)</p></a>
@@ -63,5 +67,5 @@
     <script type="text/javascript" src="js/controllers.js"></script>
 	<script type="text/javascript" src="js/directives.js"></script>
 	</body>
-	<center>Site by <a href="http://www.gwgriffiths.com">Grant Griffiths</a> &copy; 2014</center>	
+	<center>Site by <a href="http://www.gwgriffiths.com">Grant Griffiths</a> - <a href="https://github.com/ggriffiths/texnotes.io">Source code</a></center>	
 </html>
